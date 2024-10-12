@@ -36,7 +36,7 @@ int main() {
             if (s[i] == 'W') {
                 white++;
             }
-            
+                    
             changes = min(changes, white);
         }
         
