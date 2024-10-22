@@ -1,45 +1,43 @@
 #include <iostream>
 #include <vector>
-#include <map>
-#include <math.h>
 #include <algorithm>
-#include <queue>
-#include <numeric>
-const int MOD = 1e9+7;
-const int N = 1e3+5;
-#define ll long long int
+#include <numeric> 
+#include <map>
 using namespace std;
 
-int main(){
+
+
+int main() {
+
     int t;
     cin >> t;
-    while(t--){
-        ll n;
-        vector <ll> a(n);
-        vector <ll> b(n);
-        map<ll,ll> freq;
-        ll j=0;
-        for(ll i=0;i<n;i++) {
+    
+    while (t--) {
+        int n;
+        cin >> n;
+
+        vector<int> a(n);
+        map<int, int> mp;
+
+        for (int i = 0; i < n; i++) {
             cin >> a[i];
-            if(a[i]%2!=0) {
-                freq[a[i]] = i+1;
-                b[j] = a[i];
-                j++;
+            mp[a[i]] = i + 1;
+        }
+
+        int maxSum = -1;
+
+        for (int i = 1; i <= 1000; i++) {
+            if (mp.find(i) == mp.end()) continue;
+            for (int j = i; j <= 1000; j++) {
+                if (mp.find(j) == mp.end()) continue;
+                if (gcd(i, j) == 1) {
+                    maxSum = max(maxSum, mp[i] + mp[j]);
+                }
             }
         }
 
-        sort(b.rbegin(),b.rend());
-        ll l=-1,r=-1;
-        for(int i=0;i<n;i++){
-            for(int j=i+1;j<n;j++)
-            if(i+1 < n && gcd(b[i],b[j]) == 1) {
-                l=b[i];
-                r=b[j];
-                break;
-            }
-        }
-        if(l!=-1&&r!=-1)
-        cout <<  freq[l] + freq[r] << endl;
-        else cout << -1 << endl;
+        cout << maxSum << endl;
     }
+
+    return 0;
 }
