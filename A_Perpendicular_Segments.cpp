@@ -19,7 +19,7 @@ int main() {
         int mn = min(x,y);
         
         cout << 0 << " " << 0 << " " << mn << " " << mn << endl;
-        cout << 0 << " " << x << " " << x << " " << 0 << endl;
+        cout << 0 << " " << mn << " " << mn << " " << 0 << endl;
         
     }
 }
