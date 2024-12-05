@@ -17,40 +17,15 @@ int main() {
     while(t--) {
         ll n,b,c;
         cin >> n >> b >>c ;
-        // vector<ll> a(n);
-        // map<ll,ll> mp;
-        ll ans=0;
-        if(n==1) {
-            if(c>=n) cout << 1 << endl;
-            else cout << 0 << endl;
-            continue;
-        }
         if (b == 0) {
-            if(c==0) cout << -1 << endl;
-            else if (c < n) cout << n-1 << endl;  
+            if(c>=n) cout << n << endl;
+            else if (c >=n-2) cout << n-1 << endl;  
             else cout << -1 << endl;
-            continue;
         }
-        // if(b==c && n==b) {
-        //     cout << n << endl;
-        //     continue;
-        // }
-        ll c=0;
-        for(ll i=0;i<n;i++) {
-            ll x = b*i + c;
+       else {
+		    if (c >= n) cout << n << endl;
+			else cout << n - max(0ll, 1 + (n - c - 1) / b) << endl;
+		}
 
-            // cout << x << endl;
-           if(x>=n) {
-            if(c<(n-i)){
-            ans = n-i;
-            break;
-            }
-           }
-           else {
-            c++;
-           }
-        }
-
-        cout << ans << endl;
     }
 }
