@@ -7,8 +7,8 @@
 #include <numeric>
 #include <algorithm>
 #include <queue>
-const int MOD = 1e9+7;
 #define ll long long int
+const ll MOD = 1e9+7;
 using namespace std;
 
 bool possible(int i,vector<ll> &a,int n,int m) {
