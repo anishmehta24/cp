@@ -11,27 +11,32 @@ const int MOD = 1e9+7;
 #define ll long long int
 using namespace std;
 
-bool solve(vector<ll> a,ll k) {
-    set<ll> s;
-    for(int i=0;i<a.size();i++){
-        s.insert(a[i] % k);
-        if(s.size()>2) break;
+void solve(){
+    int n;
+    cin >> n;
+    vector<ll> a(n);
+    for(int i=0;i<n;i++) cin >> a[i];
+    ll x=2;
+    while(true){
+        set<ll> s;
+        for(ll i=0;i<n;i++) {
+            s.insert(a[i]%x);
+        }
+        if(s.size()==2) {
+            cout << x << endl;
+            break;
+        }
+        x*=2;
     }
-    return (s.size()==2);
+
 }
+
 
 int main() {
     int t;
     cin >> t;
     while(t--) {
-        int n;
-        cin >> n;
-        vector<ll> a(n);
-        for(int i;i<n;i++) cin >> a[i];
-        if(n==2) {
-            cout << 1 << endl;
-            continue;
-        }
-        cout << 2 << endl;
+       
+       solve();
     }
 }
