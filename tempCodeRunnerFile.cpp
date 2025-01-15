@@ -1,8 +1,2 @@
- // if(m==1){
-        //     cout << c0/k << endl;
-        // }
-        
-        // else{
-           
-        //     cout << (c)/k<< endl;
-        // }
+ cout << a[i] << endl;
+                cout << "anish "<< endl;

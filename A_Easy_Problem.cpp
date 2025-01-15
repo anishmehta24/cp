@@ -14,11 +14,11 @@ const int MOD = 1e9+7;
 using namespace std;
 
 int main() {
-    ll a,b,c,d;
-    cin >> a >> b >> c >> d;
-
-    cout << setprecision(12)<< fixed;
-
-   cout << (double(a)/b) / (1 - (1 - double(a)/b) * (1 - double(c)/d)) << endl;
-
+    int t;
+    cin>> t;
+    while(t--) {
+        int n;
+        cin >> n;
+        cout << n-1 << endl;
+    }
 }
