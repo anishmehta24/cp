@@ -14,17 +14,17 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-    vector<int> arr(n);
-    for(int i=0;i<n;i++) cin >> arr[i];
+    vector<int> a(n);
+    for(int i=0;i<n;i++) cin >> a[i];
     int l=0,r=1;
-    int s= arr[0],c=0;
+    int s= a[0],c=0;
     while(r<n) {
-        if(s==arr[r]){
-            s+=arr[r];
+        if(s==a[r]){
+            s+=a[r];
         }
         else{
             c++;
-            s=arr[r];
+            s=a[r];
             l=r;
         }
         r++;
@@ -35,7 +35,7 @@ int main() {
     if(c==n-1){
         set<int> s;
         for(int i=0;i<n;i++) {
-            s.insert(arr[i]);
+            s.insert(a[i]);
         }
         cout << s.size() <<endl;
     }

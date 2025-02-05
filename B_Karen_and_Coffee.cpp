@@ -33,26 +33,26 @@ int main() {
         maxi = max(maxi, max(b[i].first,b[i].second));
     }
 
-    vector<int> arr(maxi-mini+1,0);
+    vector<int> a(maxi-mini+1,0);
     for(int i=0;i<n;i++) {
-        arr[a[i].first -mini ] += 1;
-        arr[a[i].second -mini +1] += -1;
+        a[a[i].first -mini ] += 1;
+        a[a[i].second -mini +1] += -1;
     }
 
     for(int i=0;i<maxi-mini;i++) {
-        arr[i+1]+=arr[i];
-        // cout << arr[i] << endl;
+        a[i+1]+=a[i];
+        // cout << a[i] << endl;
     }
 
-    vector<int> binArr(maxi-mini+2,0);
+    vector<int> bina(maxi-mini+2,0);
     for (int i = 0; i < maxi-mini+2; i++) {
-        binArr[i] = (arr[i] >= k) ? 1 : 0;
+        bina[i] = (a[i] >= k) ? 1 : 0;
     }
 
     vector<int> prefixSum(maxi-mini + 2, 0);
-    prefixSum[0]=binArr[0];
+    prefixSum[0]=bina[0];
     for (int i = 1; i <= maxi-mini+1; i++) {
-        prefixSum[i] = prefixSum[i - 1] + binArr[i - 1];
+        prefixSum[i] = prefixSum[i - 1] + bina[i - 1];
     }
 
 

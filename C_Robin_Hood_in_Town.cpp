@@ -12,16 +12,16 @@ int main() {
     while (t--) {
         int n;
         cin >> n ; 
-        vector<long long> arr(n);
+        vector<long long> a(n);
         long long sum=0;
 
        
         for (int i = 0; i < n; i++) {
-            cin >> arr[i];
-            sum+=arr[i];
+            cin >> a[i];
+            sum+=a[i];
         }
 
-        sort(arr.begin(),arr.end());
+        sort(a.begin(),a.end());
          if(n<=2)
         {
             cout<<-1<<endl;
@@ -30,7 +30,7 @@ int main() {
         double m = sum/(2.0*n);
         long long c=0;
          for (int i = 0; i < n; i++) {
-            if(m>arr[i])
+            if(m>a[i])
             {
                 c++;
                 if(c>n/2)
@@ -46,7 +46,7 @@ int main() {
         else
         {
             long long h = n/2 ;
-            long long x =  2*n*arr[h] - sum +1 ;
+            long long x =  2*n*a[h] - sum +1 ;
 
            if(x>=0)
             cout << x<< endl;

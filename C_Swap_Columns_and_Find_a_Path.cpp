@@ -23,7 +23,7 @@ int main() {
         vector<ll> b(n);
         for(int i=0;i<n;i++) cin >> a[i];
         for(int i=0;i<n;i++) cin >> b[i];
-        // sort(arr.rbegin(),arr.rend());
+        // sort(a.rbegin(),a.rend());
          ll s=0;
         vector<ll> ans(n+1);
         vector <ll> temp(n);

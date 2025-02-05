@@ -19,24 +19,24 @@ int main() {
     while(t--) {
         int n;
         cin >> n;
-        vector<ll> arr(n);
-        for(int i=0;i<n;i++) cin >> arr[i];
+        vector<ll> a(n);
+        for(int i=0;i<n;i++) cin >> a[i];
         set<ll> s;
         map<ll ,int> mp;
         for(int i=0;i<n;i++) {
-            mp[arr[i]]++;
+            mp[a[i]]++;
         }
         ll x = n-2;
         double y=0,z=0;
         for(int i=0;i<n;i++) {
-            if(x>=arr[i]){
-                int m = x/arr[i];
-                y = (double) x/arr[i];
+            if(x>=a[i]){
+                int m = x/a[i];
+                y = (double) x/a[i];
                 if(y==m){
-                    mp[arr[i]]--;
+                    mp[a[i]]--;
                     //  cout << y  << endl;
                     if(mp[y]>0){
-                        z = arr[i];
+                        z = a[i];
                         break;
                     }
                 }

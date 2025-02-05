@@ -52,7 +52,9 @@
         "xtree": "cpp",
         "xutility": "cpp",
         "numeric": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "deque": "cpp",
+        "queue": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }

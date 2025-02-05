@@ -13,10 +13,10 @@ int main() {
         int n, q;
         cin >> n >> q;
         
-        vector<int> a(n), b(q);   // Arrays to store `a` and `b`
+        vector<int> a(n), b(q);   // aays to store `a` and `b`
         
         for (int i = 0; i < n; i++) {
-            cin >> a[i];   // Input array `a`
+            cin >> a[i];   // Input aay `a`
         }
         
         for (int i = 0; i < q; i++) {

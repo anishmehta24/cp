@@ -14,9 +14,9 @@ using namespace std;
 void solve() {
     int n;
     cin >> n;
-    vector<int> arr(n);
+    vector<int> a(n);
     int c0=0;
-    for(auto &i:arr) {
+    for(auto &i:a) {
         cin >> i;
         if(i==0) c0++;
     }
@@ -27,7 +27,7 @@ void solve() {
     else{
 
         for (int i = 0; i < n; ++i) {
-            if (arr[i] == 1) {
+            if (a[i] == 1) {
                 curr++;
             } else {       
                 ans = max(ans, prev + curr);

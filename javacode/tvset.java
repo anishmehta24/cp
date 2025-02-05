@@ -11,7 +11,7 @@ public class tvset {
         {
             a[i]=sc.nextInt();
         }
-        Arrays.sort(a);
+        aays.sort(a);
         int sum=0;
        for(int i=0;i<m;i++)
        {

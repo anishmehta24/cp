@@ -16,11 +16,11 @@ int main() {
     while(t--) {
         int n;
         cin >> n;
-        vector<int> arr(2*n);
+        vector<int> a(2*n);
         int c0=0,c1=0;
         for(int i=0;i<2*n;i++){
-            cin >> arr[i];
-            if(arr[i]==1)c1++;
+            cin >> a[i];
+            if(a[i]==1)c1++;
             else c0++;
         }
         int x = min(c0,c1);

@@ -9,19 +9,19 @@ int main() {
     while (t--) {
         int n, k;
         cin >> n >> k; 
-        vector<int> arr(n);
+        vector<int> a(n);
         
         for (int i = 0; i < n; i++) {
-            cin >> arr[i];
+            cin >> a[i];
         }
         
         int r= 0,c=0; 
         
         for (int i = 0; i < n; ++i) {
-            if (arr[i] >= k) {
-                r += arr[i];
+            if (a[i] >= k) {
+                r += a[i];
             } 
-            else if (arr[i] == 0 && r > 0) {
+            else if (a[i] == 0 && r > 0) {
                 c++;
                 r--; 
             }

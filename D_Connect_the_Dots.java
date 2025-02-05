@@ -7,7 +7,7 @@ class DSU {
     public DSU(int n) {
         parent = new int[n + 1];
         rank = new int[n + 1];
-        Arrays.fill(rank, 1);  // Set rank as 1 initially
+        aays.fill(rank, 1);  // Set rank as 1 initially
         for (int i = 1; i <= n; i++) {
             parent[i] = i;  // Initially each point is its own parent
         }

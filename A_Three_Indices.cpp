@@ -12,17 +12,17 @@ int main() {
     while (t--) {
        int n;
        cin >> n;
-       vector<ll> arr(n);
+       vector<ll> a(n);
        for(int i=0;i<n;i++){
-        cin >> arr[i];
-    //    if(arr[i]>max){
-    //     max = arr[i];
+        cin >> a[i];
+    //    if(a[i]>max){
+    //     max = a[i];
     //     ind=i;
     //    }
        }
        int c=0;
         for (int i = 1; i < n - 1; i++) {
-            if (arr[i] > arr[i-1] && arr[i] > arr[i+1]) {
+            if (a[i] > a[i-1] && a[i] > a[i+1]) {
                 cout << "YES" << endl;
                 cout << i << " " << i+1 << " " << i+2 << endl;
                 c=1;

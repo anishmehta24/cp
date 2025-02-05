@@ -18,24 +18,24 @@ int main() {
     while(t--) {
         ll n,k;
         cin >> n >> k;
-        vector<ll> arr(n);
+        vector<ll> a(n);
         ll maxi=INT_MIN;
         for(int i=0;i<n;i++){
-            cin >> arr[i];
-            if(arr[i]>maxi) maxi=arr[i];
+            cin >> a[i];
+            if(a[i]>maxi) maxi=a[i];
         }
-        sort(arr.rbegin(),arr.rend());
+        sort(a.rbegin(),a.rend());
         ll s=0;
         // int i=0;
         // while(i<n && s<k){
-        //     s+=arr[i++];
+        //     s+=a[i++];
         // }
         // if(s<k) cout << k-s << endl;
         int c=-1;
         for(int i=0;i<n;i++) {
-            s+=arr[i];
+            s+=a[i];
             if(s>k){
-                s-=arr[i];
+                s-=a[i];
                 cout << k - s << endl;
                 c=0;
                 break;

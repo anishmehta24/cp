@@ -15,16 +15,16 @@ int main()
     {
        ll  n,k,q;
        cin >> n >> k >> q;
-       vector<ll> arr(n);
+       vector<ll> a(n);
        for(int i=0;i<n;i++){
-        cin >> arr[i];
+        cin >> a[i];
        }
 
        ll ans = 0,length=0;
 
        ll l=0,r=0,i=0;
        while(l<=n ){
-        if(arr[r]<=q){
+        if(a[r]<=q){
              r++;
             // if(r-l>=k){
             //     i++;

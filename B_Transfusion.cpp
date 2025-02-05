@@ -17,11 +17,11 @@ int main() {
     cin >> t;
     while(t--) {
         ll n; cin >> n;
-        vector<ll> arr(n);
+        vector<ll> a(n);
         ll sum = 0;
         for(int i=0;i<n;i++) {
-                cin >> arr[i];
-                sum+=arr[i];
+                cin >> a[i];
+                sum+=a[i];
         }
 
         if(sum % n != 0) {
@@ -31,18 +31,18 @@ int main() {
 
         ll target = sum / n;
         for(ll i = 1; i < n-1; i++) {
-            if(arr[i-1] == target) continue;
+            if(a[i-1] == target) continue;
 
-            if(arr[i-1] < target) {
-                arr[i+1] -= (target - arr[i-1]);
+            if(a[i-1] < target) {
+                a[i+1] -= (target - a[i-1]);
             }
             else {
-                arr[i+1] += (arr[i-1] - target);
+                a[i+1] += (a[i-1] - target);
             }
 
         }
 
-        if(arr[n-1] == target) cout << "YES" << endl;
+        if(a[n-1] == target) cout << "YES" << endl;
         else cout << "NO" << endl;
     }
 

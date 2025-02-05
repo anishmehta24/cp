@@ -9,17 +9,17 @@ int main(){
         int n,m;
         cin>>n>>m;
 
-        int arr[10][10] ;
+        int a[10][10] ;
         int s=0,neg=0,min=INT_MAX;
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
-                cin>>arr[i][j];
-                if(arr[i][j]<0)
+                cin>>a[i][j];
+                if(a[i][j]<0)
                 neg++;
-               // cout<<abs(arr[i][j])<<endl;
-                if(abs(arr[i][j])<min)
-                min = abs(arr[i][j]);
-                s+=abs(arr[i][j]);
+               // cout<<abs(a[i][j])<<endl;
+                if(abs(a[i][j])<min)
+                min = abs(a[i][j]);
+                s+=abs(a[i][j]);
             }
         }
 

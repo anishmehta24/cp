@@ -19,11 +19,11 @@ int main() {
     while(t--) {
         int n;
         cin >> n;
-        vector<ll> arr(n);
-        for(int i=0;i<n;i++) cin >> arr[i];
+        vector<ll> a(n);
+        for(int i=0;i<n;i++) cin >> a[i];
         map<ll,int> mp;
         for(int i=0;i<n;i++) {
-            mp[arr[i]]++;
+            mp[a[i]]++;
         }
         int c=0;
         for(auto i :mp){

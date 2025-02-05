@@ -1,21 +1,21 @@
 import java.util.Scanner;
 
-public class LokiArraySplit {
+public class LokiaaySplit {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
        
         int n = scanner.nextInt();
-        long[] arr = new long[n];
+        long[] a = new long[n];
         for (int i = 0; i < n; i++) {
-            arr[i] = scanner.nextLong();
+            a[i] = scanner.nextLong();
         }
 
         long[] prefixSum = new long[n];
-        prefixSum[0] = arr[0];
+        prefixSum[0] = a[0];
         for (int i = 1; i < n; i++) {
-            prefixSum[i] = prefixSum[i - 1] + arr[i];
+            prefixSum[i] = prefixSum[i - 1] + a[i];
         }
 
        
@@ -26,7 +26,7 @@ public class LokiArraySplit {
             int[] count = new int[n];
             long currSum = 0;
             for (int i = n - 1; i >= 0; i--) {
-                currSum += arr[i];
+                currSum += a[i];
                 if (currSum == targetSum) {
                     count[i] = 1;
                 }
@@ -36,7 +36,7 @@ public class LokiArraySplit {
             }
             currSum = 0;
             for (int i = 0; i < n - 2; i++) {
-                currSum += arr[i];
+                currSum += a[i];
                 if (currSum == targetSum) {
                     ways += count[i + 2];
                 }

@@ -17,13 +17,13 @@ int main() {
     while(t--) {
         ll n;
         cin >> n;
-        vector<ll> arr(n);
-        for(int i=0;i<n;i++) cin >> arr[i];
-        sort(arr.begin(),arr.end());
+        vector<ll> a(n);
+        for(int i=0;i<n;i++) cin >> a[i];
+        sort(a.begin(),a.end());
         map<int, int> mp;
         
         for (int i = 0; i < n; i++)
-            mp[arr[i]]++;
+            mp[a[i]]++;
         ll ans=0;
         ll c=0;
         for (auto it = mp.begin(); it != mp.end(); ++it) {

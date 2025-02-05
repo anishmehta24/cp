@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.aays;
 import java.util.Scanner;
 
 public class mod {
@@ -20,9 +20,9 @@ public class mod {
   }
 
   static boolean solve(int[] a) {
-    int min = Arrays.stream(a).min().getAsInt();
+    int min = aays.stream(a).min().getAsInt();
 
-    return Arrays.stream(a).filter(x -> x == min).count() == 1
-        || Arrays.stream(a).anyMatch(x -> x % min != 0);
+    return aays.stream(a).filter(x -> x == min).count() == 1
+        || aays.stream(a).anyMatch(x -> x % min != 0);
   }
 }

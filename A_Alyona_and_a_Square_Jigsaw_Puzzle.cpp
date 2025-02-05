@@ -19,12 +19,12 @@ int main() {
     while(t--) {
         ll n;
         cin >> n;
-        vector<ll> arr(n);
-        for(int i=0;i<n;i++) cin >> arr[i];
+        vector<ll> a(n);
+        for(int i=0;i<n;i++) cin >> a[i];
         ll s=0;
         int c=0;
         for(int i=0;i<n;i++){
-            s+=arr[i];
+            s+=a[i];
             double x = sqrt(s);
             ll y = sqrt(s);
             if(x==y){
