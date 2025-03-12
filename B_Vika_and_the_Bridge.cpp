@@ -1,55 +1,43 @@
 #include <bits/stdc++.h>
-#define ll long long int
-const ll MOD = 1e9 + 7;
+ 
 using namespace std;
-
-bool check(ll x) {
-    if(x < 0) return false;
-    ll r = (ll) sqrt((long double)x);
-    return r * r == x;
-}
-
-void solve() {
-    int n;cin >> n;
-    ll x =(ll) n*(n+1)/2;
-    int y = sqrt(x);
-    if(check(x)) {cout << -1 << endl;return;}
-    vector<int> ans;
-    set<int , greater<int>> s;
-    ll pref=0;
-
-    for(int i=1;i<=n;i++) {
-        s.insert(i);
-    }
-    
-    for(int i=0;i<n;i++) {
-        bool flag=false;
-        for(auto it:s){
-            if(!check(pref+it)) {
-                ans.push_back(it);
-                pref+=it;
-                s.erase(it);
-                flag = true;
-                break;
-                
-            }
-        }
-        if(!flag) break;
-
-    }
-    for(auto it:ans) {
-        cout << it << " ";
-    }
-    cout << endl;
-    
-}
-
+ 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-    ll t;
+    int t;
     cin >> t;
     while (t--) {
-        solve();
+        int n, k;
+        cin >> n >> k;
+        vector<int> c(n);
+        for (int i = 0; i < n; ++i) {
+            cin >> c[i];
+        }
+        vector<int> last(k, -1);
+        vector<int> x(k), y(k);
+        for (int i = 0; i < n; ++i) {
+            int m = i - last[c[i] - 1];
+            if (m > x[c[i] - 1]) {
+                y[c[i] - 1] = x[c[i] - 1];
+                x[c[i] - 1] = m;
+            } else if (m > y[c[i] - 1]) {
+                y[c[i] - 1] = m;
+            }
+            last[c[i] - 1] = i;
+        }
+        for (int i = 0; i < k; ++i) {
+            int m = n - last[i];
+            if (m > x[i]) {
+                y[i] = x[i];
+                x[i] = m;
+            } else if (m > y[i]) {
+                y[i] = m;
+            }
+        }
+        int ans = 1e9;
+        for (int i = 0; i < k; ++i) {
+            ans = min(ans, max((x[i] + 1) / 2, y[i]));
+        }
+        cout << ans - 1 << "\n";
     }
+    return 0;
 }

@@ -36,7 +36,7 @@ int main() {
 
     vector<int> a(n+1);
     for(int i=1;i<=n;i++) cin >> a[i];
-    vector<vector<int>> adj(n+1);
+    vector<vector<int>> adj(n+1);  
     for(int i=1;i<n;i++) {
         int u,v;
         cin >> u >> v;
