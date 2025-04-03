@@ -20,14 +20,14 @@ void solve() {
     for(int i=1;i<n;i++) {
         prefmax[i] = max(prefmax[i-1],a[i]);
     }
-    for(auto x:k)
-    {
-        int ind = upper_bound(prefmax.begin(), prefmax.end(), x) - prefmax.begin() - 1; 
-        if (ind >= 0) {
+    for(auto it:k) {
+        int ind = upper_bound(prefmax.begin(),prefmax.end(),it) - prefmax.begin();
+        if (ind < n) {
             cout << pref[ind] << " ";
         } else {
-            cout << 0 << " "; 
+            cout << pref[n - 1] << " ";
         }
+
     }
     cout << "\n";
     

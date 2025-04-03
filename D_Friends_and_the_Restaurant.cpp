@@ -21,7 +21,7 @@ void solve() {
     for(int i = 0; i < n; i++){
         while(j > i && pairs[i].first + pairs[j].first < 0) j--;
         if(j <= i) break;
-        ans++; j--;
+        ans++,j--;
     }
     cout << ans << endl;
 
