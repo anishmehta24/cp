@@ -7,9 +7,19 @@ void solve() {
    vector<int> a(n);
    for(auto &i : a) cin >> i;
 
-   int sum = accumulate(a.begin(),a.end(),0);
-   
-   sort(a.begin(),a.end());
+   sort(a.begin(), a.end());
+   vector<int> pref(n);
+   pref[0] = a[0];
+   for(int i=1;i<n;i++) {
+       pref[i] = pref[i-1] + a[i];
+   }
+   int ans=0;
+   for(int i=0;i<n;i++) {
+        int diff = x - pref[i];
+        if(diff < 0) break;
+        ans+= (1+ (diff/(i+1)));
+   }
+   cout << ans << endl;
    
 }
 
@@ -19,5 +29,7 @@ signed main() {
 
     int t = 1;
     cin >> t;
-    solve();
+    while(t--){
+        solve();
+    }
 }
